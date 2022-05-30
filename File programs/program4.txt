@@ -1,0 +1,3 @@
+this text is appended later to the file using c program
+this text is appended later to the file using c program
+this text is appended later to the file using c program

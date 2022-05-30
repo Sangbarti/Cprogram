@@ -1,0 +1,92 @@
+#include <stdio.h>
+int main()
+{
+  char ch;
+  FILE *fp;
+  fp = fopen("abc.txt", "r");
+  while( (ch=fgetc(fp)) != EOF )
+  {
+    printf("%c", ch);
+  }
+  fclose(fp);
+
+  return 0;
+}
+
+------------------------------------------
+
+#include <stdio.h>
+int main()
+{
+  char str[80];
+  FILE *fp;
+  fp = fopen("abc.txt", "w+");
+  while( (fgets(str, 79, fp)) != NULL )
+  {
+    printf("%s", str);
+  }
+  fclose(fp);
+
+  return 0;
+}
+
+-----------------
+
+#include <stdio.h>
+int main()
+{
+  char str[]= "Tom and Jerry are Good Friends..";
+  int i=0;
+  FILE *fp;
+  fp = fopen("abc.txt", "a");
+  while( str[i] != '\0' )
+  {
+    fputc(str[i], fp);
+    i++;
+  }
+  fclose(fp);
+
+  return 0;
+}
+
+----------------------------------
+
+#include <stdio.h>
+int main()
+{
+  char str[]= "Tom and Jerry are Good Friends..";
+  FILE *fp;
+  fp = fopen("abc.txt", "a");
+  fputs(str, fp);
+  fclose(fp);
+
+  return 0;
+}
+
+----------------------------
+
+#include <stdio.h>
+int main()
+{
+  char str[20], str2[20];
+  int age;
+  FILE *fp;
+  fp = fopen("abc.txt", "a");
+  printf("Enter name and age: ");
+  scanf("%s%d", str, &age);
+
+  //Printing to File or Writing to File
+  fprintf(fp, "%s %d", str, age);
+  fclose(fp);
+
+
+  //Now reading or Scanning from FILE
+  fp = fopen("abc.txt", "r");
+  fscanf(fp, "%s %d", str2, &age);
+  printf("Name=%s, Age=%d", str2, age);
+  fclose(fp);
+
+  return 0;
+}
+
+--------------

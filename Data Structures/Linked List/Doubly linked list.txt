@@ -1,0 +1,46 @@
+struct d_link
+{
+struct d_link *prev;
+int info;
+struct d_link *next;
+};
+typedef struct d_link Dnode;
+int num;
+Dnode *lp = NULL,*rp = NULL;
+void main()
+{
+lp = (Dnode*)malloc(sizeof(Dnode));
+
+}
+ void create (Dnode *ptr)
+{char ch;
+num = 0;
+lp->prev = NULL;
+printf("Enter E for exit or any other key to continue);
+ch = getchar();
+if(ch == 'e')
+{
+	free(lp);
+	exit(0);
+}
+do
+{
+	pf("Input the nvalue of teh node: %d",(num+1));
+	sf("%d",&ptr->info);
+	fflush(stdin);//clears any garbage value(used only for character operatons)
+	printf("Want ot continue (Y/N)?:");
+	ch = getchar();
+	if((ch == 'y')||(ch == 'Y'))
+	{	
+		ptr->next = (Dnode*)malloc(sizeof(Dnode));
+		ptr->next->prev = ptr;
+		ptr = ptr->next;
+	}
+num++;	
+}while((ch == 'y')||(ch == 'Y'));
+ptr->next = NULL;
+rp = ptr;
+}
+	
+}
+ 

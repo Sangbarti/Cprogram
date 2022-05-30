@@ -1,0 +1,17 @@
+a=b
+
+1111 division done from left to right
+0111
+0011
+0001
+
+1111 multiplication done from right to left
+11110
+111100
+
+
+
+int i=5;
+printf("%d%d%d%d%d%d",i++,i--,++i,--i,i); 5 4 5 5 4
+4 5 5 4 5 - ans( here ans is calculated on lifo basis)
+
